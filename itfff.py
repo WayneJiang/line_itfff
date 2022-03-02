@@ -20,6 +20,6 @@ if __name__ == "__main__":
     while True:
         btc = GetPrice('BTCUSDT')
         eth = GetPrice('ETHUSDT')
-        msg = '比特幣即時價格 ： ' + str(btc) + '美元' + '\n乙太幣即時價格 ： ' + str(eth) + '美元'
+        msg = '\n比特幣即時價格 ： ' + str(btc) + '美元' + '\n乙太幣即時價格 ： ' + str(eth) + '美元'
         Line(msg)
-        time.sleep(10)
+        time.sleep(600)
