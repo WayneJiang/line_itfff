@@ -2,6 +2,9 @@ import requests
 import time
 import os
 
+from flask import Flask
+app = Flask(__name__)
+
 #Line Notify
 def Line(msg):   
     url = ('https://maker.ifttt.com/trigger/update/with/key/dRpC2gm9MCzrCHayYmTaq8?value1='+str(msg))
