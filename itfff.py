@@ -20,12 +20,16 @@ def GetPrice(symbol):
         print ('Error! problem is {}'.format(e.args[0]))
     return float(price)
 
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+def Do():
     while True:
         btc = GetPrice('BTCUSDT')
         eth = GetPrice('ETHUSDT')
         msg = '\n比特幣即時價格 ： ' + str(btc) + ' 美元' + '\n乙太幣即時價格 ： ' + str(eth) + ' 美元'
         Line(msg)
         time.sleep(600)
+
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    Do()
+    
