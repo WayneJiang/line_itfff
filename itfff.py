@@ -24,6 +24,6 @@ if __name__ == "__main__":
     time_zone = datetime.timedelta(hours=8)
     local_datetime = current_datetime + time_zone
     datetime_format = local_datetime.strftime("%Y/%m/%d %H:%M:%S")  
-    msg = 'Binance報價\n\n時間點 : ' + str(datetime_format) + '\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元\n'
+    msg = 'Binance報價\n時間點 : ' + str(datetime_format) + '\n\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元'
     Line(msg)
     
