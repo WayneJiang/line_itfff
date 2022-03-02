@@ -18,6 +18,7 @@ def GetPrice(symbol):
 if __name__ == "__main__":
     btc = GetPrice('BTCUSDT')
     eth = GetPrice('ETHUSDT')
-    msg = '\n比特幣即時價格 ： ' + str(btc) + ' 美元' + '\n乙太幣即時價格 ： ' + str(eth) + ' 美元'
+    matic = GetPrice('MATICUSDT')
+    msg = '\nBTC即時價格 ： ' + str(btc) + ' 美元' + '\nETH即時價格 ： ' + str(eth) + ' 美元' + \nMATIC即時價格 ： ' + str(matic) + ' 美元'
     Line(msg)
     
