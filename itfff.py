@@ -4,7 +4,7 @@ import time
 #Line Notify
 def Line(msg):   
     url = ('https://maker.ifttt.com/trigger/事件名稱/with/'+
-          'key/金鑰' +
+          'key/dRpC2gm9MCzrCHayYmTaq8' +
           '?value1='+str(msg))
     r = requests.get(url)      
     if r.text[:5] == 'Congr':  
