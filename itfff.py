@@ -13,13 +13,13 @@ def Line(msg):
 
 def GetPrice():
     try:
-        price = requests.get('https://api.binance.com/api/v3/ticker/price', params={'symbol': symbol}).json()['price']
+        price = requests.get('https://api.binance.com/api/v3/ticker/price', params={'symbol': 'BTCUSDT'}).json()['price']
     except Exception as e:
         print ('Error! problem is {}'.format(e.args[0]))
     return float(price)
 
 if __name__ == "__main__":
     while True:
-        price = GetPrice(url, coin)
+        price = GetPrice()
         Line(msg)
         time.sleep(10)
