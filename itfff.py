@@ -1,9 +1,4 @@
 import requests
-import time
-import os
-
-from flask import Flask
-app = Flask(__name__)
 
 #Line Notify
 def Line(msg):   
@@ -21,13 +16,8 @@ def GetPrice(symbol):
     return float(price)
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-else:
-    while True:
-        btc = GetPrice('BTCUSDT')
-        eth = GetPrice('ETHUSDT')
-        msg = '\n比特幣即時價格 ： ' + str(btc) + ' 美元' + '\n乙太幣即時價格 ： ' + str(eth) + ' 美元'
-        Line(msg)
-        time.sleep(600)
+    btc = GetPrice('BTCUSDT')
+    eth = GetPrice('ETHUSDT')
+    msg = '\n比特幣即時價格 ： ' + str(btc) + ' 美元' + '\n乙太幣即時價格 ： ' + str(eth) + ' 美元'
+    Line(msg)
     
