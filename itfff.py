@@ -22,4 +22,4 @@ if __name__ == "__main__":
         eth = GetPrice('ETHUSDT')
         msg = '\n比特幣即時價格 ： ' + str(btc) + ' 美元' + '\n乙太幣即時價格 ： ' + str(eth) + ' 美元'
         Line(msg)
-        time.sleep(600)
+        time.sleep(6000)
