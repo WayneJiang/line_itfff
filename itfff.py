@@ -1,4 +1,5 @@
 import requests
+import datetime
 
 #Line Notify
 def Line(msg):   
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     btc = GetPrice('BTCUSDT')
     eth = GetPrice('ETHUSDT')
     matic = GetPrice('MATICUSDT')
-    msg = 'Binance報價\n\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元\n'
+    now = datetime.datetime.now
+    msg = 'Binance報價\n\n時間點 : ' + str(now) + '\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元\n'
     Line(msg)
     
