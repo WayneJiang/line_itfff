@@ -18,8 +18,8 @@ def GetPrice(symbol):
 
 if __name__ == "__main__":
     while True:
-        price = GetPrice('BTCUSDT')
-        Line('比特幣即時價格 ： ' + str(price) + '美元')
-        price = GetPrice('ETHUSDT')
-        Line('乙太幣即時價格 ： ' + str(price) + '美元')
+        btc = GetPrice('BTCUSDT')
+        eth = GetPrice('ETHUSDT')
+        msg = '比特幣即時價格 ： ' + str(btc) + '美元' + '\n乙太幣即時價格 ： ' + str(eth) + '美元'
+        Line(msg)
         time.sleep(10)
