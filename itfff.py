@@ -19,5 +19,5 @@ def GetPrice():
 if __name__ == "__main__":
     while True:
         price = GetPrice()
-        Line(msg)
+        Line(price)
         time.sleep(10)
