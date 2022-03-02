@@ -3,10 +3,8 @@ import time
 
 #Line Notify
 def Line(msg):   
-    url = ('https://maker.ifttt.com/trigger/update/with/'+
-          'key/dRpC2gm9MCzrCHayYmTaq8' +
-          '?value1='+str(msg))
-    r = requests.get(url)      
+    url = ('https://maker.ifttt.com/trigger/update/with/key/dRpC2gm9MCzrCHayYmTaq8?value1='+str(msg))
+    r = requests.get(url)
     if r.text[:5] == 'Congr':  
         print('成功推送 (' +str(msg)+') 至 Line')
     return r.text
