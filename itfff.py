@@ -21,7 +21,7 @@ def GetPrice(symbol):
 def GetKLine(symbol):
     try:
         json = requests.get('https://api3.binance.com/api/v3/klines',params={'symbol':symbol,'interval': '1m', 'limit': 60}).json()
-        print(json)
+        #print(json)
     except Exception as e:
         print ('Error! problem is {}'.format(e.args[0]))
     
@@ -29,25 +29,26 @@ def GetKLine(symbol):
     col_open_time, col_open, col_high, col_low, col_close, col_volume, col_close_time = [], [], [], [], [], [], []
     
     for data in json:
-        time = numpy.array(json[0]).astype(numpy.int32)
-        col_open_time.append(datetime.datetime.fromtimestamp(time/1000))
-        col_open.append(json[1])
-        col_high.append(json[2])
-        col_low.append(json[3])
-        col_close.append(json[4])
-        col_volume.append(json[5])
-        time = numpy.array(json[6]).astype(numpy.int32)
-        col_close_time.append(datetime.datetime.fromtimestamp(time/1000))
+        print(data[0])
+        #time = numpy.array(json[0]).astype(numpy.int32)
+        #col_open_time.append(datetime.datetime.fromtimestamp(time/1000))
+        #col_open.append(json[1])
+        #col_high.append(json[2])
+        #col_low.append(json[3])
+        #col_close.append(json[4])
+        #col_volume.append(json[5])
+        #time = numpy.array(json[6]).astype(numpy.int32)
+        #col_close_time.append(datetime.datetime.fromtimestamp(time/1000))
         
-    data_frame['Open Time'] = col_open_time
-    data_frame['Open'] = numpy.array(col_open).astype(numpy.float32)
-    data_frame['High'] = numpy.array(col_high).astype(numpy.float32)
-    data_frame['Low'] = numpy.array(col_low).astype(numpy.float32)
-    data_frame['Close'] = numpy.array(col_close).astype(numpy.float32)
-    data_frame['Volume'] = numpy.array(col_volume).astype(numpy.float32)
-    data_frame['Close Time'] = col_close_time
+    #data_frame['Open Time'] = col_open_time
+    #data_frame['Open'] = numpy.array(col_open).astype(numpy.float32)
+    #data_frame['High'] = numpy.array(col_high).astype(numpy.float32)
+    #data_frame['Low'] = numpy.array(col_low).astype(numpy.float32)
+    #data_frame['Close'] = numpy.array(col_close).astype(numpy.float32)
+    #data_frame['Volume'] = numpy.array(col_volume).astype(numpy.float32)
+    #data_frame['Close Time'] = col_close_time
     
-    print(data_frame)
+    #print(data_frame)
         
 if __name__ == "__main__":
     #btc = GetPrice('BTCUSDT')
