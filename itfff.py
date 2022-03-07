@@ -28,23 +28,21 @@ def GetKLine(symbol):
     col_open_time, col_open, col_high, col_low, col_close, col_volume, col_close_time = [], [], [], [], [], [], []
     
     for data in json:
-        time = json[0]
-        col_open_time.append(datetime.datetime.fromtimestamp(time/1000))
+        col_open_time.append(json[0])
         col_open.append(json[1])
         col_high.append(json[2])
         col_low.append(json[3])
         col_close.append(json[4])
         col_volume.append(json[5])
-        time = json[6]
-        col_close_time.append(datetime.datetime.fromtimestamp(time/1000))
+        col_close_time.append(json[6])
         
-    data_frame['Open Time'] = col_open_time
+    data_frame['Open Time'] = datetime.datetime.fromtimestamp(numpy.array(col_open_time).astype(numpy.int)/1000)
     data_frame['Open'] = numpy.array(col_open).astype(numpy.float)
     data_frame['High'] = numpy.array(col_high).astype(numpy.float)
     data_frame['Low'] = numpy.array(col_low).astype(numpy.float)
     data_frame['Close'] = numpy.array(col_close).astype(numpy.float)
     data_frame['Volume'] = numpy.array(col_volume).astype(numpy.float)
-    data_frame['Close Time'] = col_close_time
+    data_frame['Close Time'] = datetime.datetime.fromtimestamp(numpy.array(col_close_time).astype(numpy.int)/1000)
     
     print(data_frame)
         
