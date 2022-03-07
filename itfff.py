@@ -47,11 +47,11 @@ def GetKLine(symbol):
         col_close_time.append(local_time)
         
     data_frame['Open Time'] = col_open_time
-    data_frame['Open'] = numpy.array(col_open).astype(numpy.float64)
-    data_frame['High'] = numpy.array(col_high).astype(numpy.float64)
-    data_frame['Low'] = numpy.array(col_low).astype(numpy.float64)
-    data_frame['Close'] = numpy.array(col_close).astype(numpy.float64)
-    data_frame['Volume'] = numpy.array(col_volume).astype(numpy.float64)
+    data_frame['Open'] = numpy.array(col_open).astype(numpy.float32)
+    data_frame['High'] = numpy.array(col_high).astype(numpy.float32)
+    data_frame['Low'] = numpy.array(col_low).astype(numpy.float32)
+    data_frame['Close'] = numpy.array(col_close).astype(numpy.float32)
+    data_frame['Volume'] = numpy.array(col_volume).astype(numpy.float32)
     data_frame['Close Time'] = col_close_time
     
     return data_frame
@@ -68,4 +68,6 @@ if __name__ == "__main__":
     #Line(msg)
     data_frame = GetKLine('BTCUSDT')
     macd, macdsignal, macdhist = talib.MACD(data_frame['Close'], fastperiod=12, slowperiod=26, signalperiod=9)
-    print(macd,macdsignal,macdhist)
+    print(macd)
+    print(macdsignal)
+    print(macdhist)
