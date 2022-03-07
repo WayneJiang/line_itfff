@@ -68,4 +68,4 @@ if __name__ == "__main__":
     #Line(msg)
     data_frame = GetKLine('BTCUSDT')
     macd, macdsignal, macdhist = talib.MACD(data_frame['Close'], fastperiod=12, slowperiod=26, signalperiod=9)
-    print(macd)
+    print(macd,macdsignal,macdhist)
