@@ -34,7 +34,7 @@ def GetKLine(symbol):
         col_low.append(json[3])
         col_close.append(json[4])
         col_volume.append(json[5])
-        col_close_time.append(datetime.fromtimestamp(json[6]/1000))
+        col_close_time.append(datetime.datetime.fromtimestamp(json[6]/1000))
         
     data_frame['Open Time'] = col_open_time
     data_frame['Open'] = numpy.array(col_open).astype(numpy.float)
@@ -56,4 +56,4 @@ if __name__ == "__main__":
     #datetime_format = local_datetime.strftime("%Y/%m/%d %H:%M:%S")  
     #msg = 'Binance報價\n時間點 : ' + str(datetime_format) + '\n\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元'
     #Line(msg)
-    GetKLine('BTCCUSDT')
+    GetKLine('BTCUSDT')
