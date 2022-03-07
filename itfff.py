@@ -28,7 +28,7 @@ def GetKLine(symbol):
     col_open_time, col_open, col_high, col_low, col_close, col_volume, col_close_time = [], [], [], [], [], [], []
     
     for data in json:
-        col_open_time.append(datetime.fromtimestamp(json[0]/1000))
+        col_open_time.append(datetime.datetime.fromtimestamp(json[0]/1000))
         col_open.append(json[1])
         col_high.append(json[2])
         col_low.append(json[3])
