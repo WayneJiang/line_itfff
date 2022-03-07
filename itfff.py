@@ -21,6 +21,7 @@ def GetPrice(symbol):
 def GetKLine(symbol):
     try:
         json = requests.get('https://api3.binance.com/api/v3/klines',params={'symbol':symbol,'interval': '1m', 'limit': 60}).json()
+        print(json)
     except Exception as e:
         print ('Error! problem is {}'.format(e.args[0]))
     
