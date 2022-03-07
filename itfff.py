@@ -67,4 +67,5 @@ if __name__ == "__main__":
     #msg = 'Binance報價\n時間點 : ' + str(datetime_format) + '\n\nBTC即時價格 ： ' + str(btc) + ' 美元\nETH即時價格 ： ' + str(eth) + ' 美元\nMATIC即時價格 ： ' + str(matic) + ' 美元'
     #Line(msg)
     data_frame = GetKLine('BTCUSDT')
-    talib.MACD(data_frame['Close'], fastperiod=12, slowperiod=26, signalperiod=9)
+    macd, macdsignal, macdhist = talib.MACD(data_frame['Close'], fastperiod=12, slowperiod=26, signalperiod=9)
+    print(macd)
